@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const App = () => {
-  const profiles =[
-    { name: "Taro", age:10 },
-    { name: "Hanako", age:5 }
-  ]
-  return (
-    <div>
-      {
-        profiles.map((profile) =>{
-          return <User name={profile.name} age={profile.age}/>
-        })
-      }
-    </div>
-  );
+const App = props => {
+  const [name, setName] = useState(props.name);
+  const [price, setPrice] = useState(props.price);
+
+  return(
+    <>
+      <p>現在の{name}は、{price}円です。</p>
+      <button onClick={()=>setPrice(price+1)}>+1</button>
+      <button onClick={()=>setPrice(price-1)}>-1</button>
+      <button onClick={()=>setPrice(props.price)}>RESET</button>
+      <input value={name} onChange={e => setName(e.target.value)} />
+    </>
+  )
 }
 
-const User = (props) => {
-  return <div>Hi, I am {props.name} {props.age} old!</div>
+App.defaultProps = {
+  name: '',
+  price: 1000
 }
 
 export default App;
