@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Event = ({ dispatch, event }) => { 
+const Event = ({ dispatch, event } :any) => {
   const id = event.id
   const handleClickDeleteButton = () => {
     dispatch({ type: 'DELETE_EVENT', id})

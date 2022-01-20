@@ -5,22 +5,22 @@ import Event from './components/Event'
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, []);
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState<any>("");
+  const [body, setBody] = useState<any>("");
 
-  const addEvent = e => {
+  const addEvent = (e: any) => {
     e.preventDefault();
     // console.log({title, body})
     // dispatch
     dispatch({
-      type: 'CREATE_EVENT',
+      type: "CREATE_EVENT",
       title,
-      body
-    })
+      body,
+    });
 
-    setTitle('');
-    setBody('');
-  }
+    setTitle("");
+    setBody("");
+  };
   // console.log({ state });
   return(
     <div className="container">
@@ -53,7 +53,7 @@ const App = () => {
         </thead>
         <tbody>
           {
-            state.map((event, index) => (<Event key={index} event={event} dispatch={dispatch} />))
+            state.map((event:any, index:number) => (<Event key={index} event={event} dispatch={dispatch} />))
           }
         </tbody>
       </table>
