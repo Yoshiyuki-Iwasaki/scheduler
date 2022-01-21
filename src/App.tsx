@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer from './reducer';
-import Input from "./components/Input";
+import Input from "./components/PostInput";
 import PostList from "./components/PostList";
 
 const App = () => {

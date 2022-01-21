@@ -23,30 +23,28 @@ const Input = ({ dispatch }: any) => {
     <>
       <h4>イベント作成フォーム</h4>
       <form>
-        <div className="form-groupe">
+        <div>
           <label htmlFor="formEventTitle">タイトル</label>
           <input
             id="formEventTitle"
-            className="form-control"
             value={title}
             onChange={e => setTitle(e.target.value)}
           />
         </div>
 
-        <div className="form-groupe">
+        <div>
           <label htmlFor="formEventBody">本文</label>
           <textarea
             id="formEventBody"
-            className="form-control"
             value={body}
             onChange={e => setBody(e.target.value)}
           />
         </div>
 
-        <button className="btn btn-primary" onClick={addEvent}>
+        <button onClick={addEvent}>
           イベントを作成
         </button>
-        <button className="btn btn-danger">イベントを全て削除</button>
+        <button>イベントを全て削除</button>
       </form>
     </>
   );
