@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Event = ({ dispatch, event } :any) => {
+const PostItem = ({ dispatch, event } :any) => {
   const id = event.id
   const handleClickDeleteButton = () => {
     dispatch({ type: 'DELETE_EVENT', id})
@@ -15,4 +15,4 @@ const Event = ({ dispatch, event } :any) => {
   )
 }
 
-export default Event
+export default PostItem;
