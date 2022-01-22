@@ -1,7 +1,7 @@
-import React from 'react'
-import PostItem from "./PostItem";
+import React from 'react';
+import PostItem from './PostItem';
 
-const PostList = ({ state, dispatch }:any) => {
+const PostList = ({ state, dispatch }: any) => {
   return (
     <>
       <h4>イベント一覧</h4>
@@ -24,4 +24,4 @@ const PostList = ({ state, dispatch }:any) => {
   );
 };
 
-export default PostList
+export default PostList;

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Input = ({ dispatch }: any) => {
-  const [title, setTitle] = useState<string>("");
-  const [body, setBody] = useState<string>("");
+  const [title, setTitle] = useState<string>('');
+  const [body, setBody] = useState<string>('');
 
   const addEvent = (e: any) => {
     e.preventDefault();
@@ -10,13 +10,13 @@ const Input = ({ dispatch }: any) => {
     if (!body) return;
     // dispatch
     dispatch({
-      type: "CREATE_EVENT",
+      type: 'CREATE_EVENT',
       title,
       body,
     });
 
-    setTitle("");
-    setBody("");
+    setTitle('');
+    setBody('');
   };
 
   return (
@@ -28,7 +28,7 @@ const Input = ({ dispatch }: any) => {
           <input
             id="formEventTitle"
             value={title}
-            onChange={e => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
@@ -37,17 +37,15 @@ const Input = ({ dispatch }: any) => {
           <textarea
             id="formEventBody"
             value={body}
-            onChange={e => setBody(e.target.value)}
+            onChange={(e) => setBody(e.target.value)}
           />
         </div>
 
-        <button onClick={addEvent}>
-          イベントを作成
-        </button>
+        <button onClick={addEvent}>イベントを作成</button>
         <button>イベントを全て削除</button>
       </form>
     </>
   );
 };
 
-export default Input
+export default Input;
